@@ -51,13 +51,13 @@ paire fiblog(int n){
     res.fdeux = (ullint)1;
     return res;
   }
-  i = n>>1; //decalage à droite => diviser par 2
+  i = n>>1; //divise n by 2
   mi= fiblog(i);
-  if(n&0x01){//if n impair
+  if(n&0x01){//if n odd
     res.fdeux = mi.fun*mi.fun + mi.fdeux*mi.fdeux;
     res.fun = mi.fun*mi.fun + 2*mi.fun*mi.fdeux;
     return res;
-  }//if n pair
+  }//if n even
   res.fun = mi.fun*mi.fun + mi.fdeux*mi.fdeux;
   res.fdeux = (2*mi.fun - mi.fdeux)*mi.fdeux;
   return res;
